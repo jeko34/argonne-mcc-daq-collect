@@ -1,0 +1,20 @@
+Visual C++ 2010 Program to control data collection from an Measurement Computing DAQ 1608FS
+
+Usage
+acc.exe [boardnum] [low-chan] [high-chan] [scan-rate] [minutes] [num-runs] [range]
+
+Note that the log file will be saved in the current directory. This is not necessarily the same as the location of acc.exe.
+
+1. [boardnum] is the board's number assigned by InstaCal in the file C:\ProgramData\Measurement Computing\\CB.CFG.\This number may be 0-99.
+
+2. [low-chan] is the number of the lowest channel to be scanned. Channel numbering starts at 0.
+
+3. [high-chan] is the number of the highest channel to be scanned. Only one channel will be scanned if LOW-CHAN == HIGH-CHAN.
+
+4. [scan-rate] is samples per second per channel.  Max is 100000.
+
+5. [minutes] is the total number of minutes you want to collect data. As a reference, 99 minutes is the maximum time for 3 channels. This must be an integer.
+
+6. [num-runs] is the number of times to repeat the data collection. Zero repeats data collection indefinitely. Negative values are not accepted.
+
+7. [range] is the voltage range that is scanned for data. The device scans across +/-[range] Volts. Choose 1, 2, 5, or 10.
